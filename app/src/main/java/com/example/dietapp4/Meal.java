@@ -28,4 +28,7 @@ public class Meal implements Serializable {
         this.date = date;
         this.food = food;
     }
+
+
+
 }
