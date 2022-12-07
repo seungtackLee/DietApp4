@@ -39,7 +39,10 @@ public class AddActivity extends AppCompatActivity {
 
 
 //                객체 만들어서 넘기기
-                Meal newMeal = new Meal("testDate55", "testFood55");
+                Meal newMeal = new Meal();
+                newMeal.addFood("kimchi", 1);
+
+
                 intent.putExtra("meal", newMeal);
 
 

@@ -67,14 +67,14 @@ public class MainActivity extends AppCompatActivity {
         myLayoutManager = new LinearLayoutManager(this);
         myRecyclerView.setLayoutManager(myLayoutManager);
 
-        ArrayList<Meal> mealList = new ArrayList<>();
+        ArrayList<Meal> mealList = new ArrayList<Meal>();
 
 
         //      예시 데이터 추가
         if(mealList.size()==0) {
-            mealList.add(new Meal("testDate1", "testFood1"));
-            mealList.add(new Meal("testDate2", "testFood2"));
-            mealList.add(new Meal("testDate3", "testFood3"));
+            Meal testMeal = new Meal();
+            testMeal.addFood("testfood", 2);
+            mealList.add(testMeal);
         }
 
 //        어댑터 연결

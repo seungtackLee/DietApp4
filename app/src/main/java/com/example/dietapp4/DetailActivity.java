@@ -34,8 +34,8 @@ public class DetailActivity extends AppCompatActivity {
             detail_food = (TextView)findViewById(R.id.textView_food_detail);
 
 
-            detail_date.setText(newMeal.getDate());
-            detail_food.setText(newMeal.getFood());
+            detail_date.setText(newMeal.getFoodName(0));
+            detail_food.setText(newMeal.getFoodNum(0));
         }
 
 

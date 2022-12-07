@@ -36,19 +36,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         }
 
     @Override
-    public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view, parent, false);
-        return new MyViewHolder(v);
-    }
-
-    @Override
     public void onBindViewHolder(MyAdapter.MyViewHolder holder, int position) {
         MyViewHolder myViewHolder = (MyViewHolder) holder;
 
-//            myViewHolder.picture.setImageResource(myMealList.get(position).getImageID());
 
-        myViewHolder.text_date.setText(myMealList.get(position).getDate());
-        myViewHolder.text_food.setText(myMealList.get(position).getFood());
+        Meal nowMeal = myMealList.get(position);
+
+        myViewHolder.text_date.setText(Integer.toString(myMealList.get(position).getFoodNum(0)));
+
+        myViewHolder.text_food.setText(myMealList.get(position).getFoodName(0));
+
+
 //            myViewHolder.myPicture.setOnClickListener(new View.OnClickListener() { @Override
 //            public void onClick(View v) {
 //                Context context = v.getContext();
@@ -72,6 +70,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
         } });
 
+    }
+
+    @Override
+    public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view, parent, false);
+        return new MyViewHolder(v);
     }
 
     @Override
